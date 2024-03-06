@@ -1,0 +1,29 @@
+<!-- app/views/restaurants/show.html.erb -->
+
+<h1><%= @restaurant.name %></h1>
+
+<%= @restaurant.address %>
+  <% if @restaurant.phone_number.present? %>
+        <h3>Phone numer </h3>
+        <%= @restaurant.phone_number %>
+  <% end %>
+
+<%= link_to 'all restaurants', restaurants_path %>
+<%= link_to "Add a Review", new_restaurant_review_path(@restaurant) %>
+
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<br>
+
+    <%# restaurant average rating
+
+    ul<li
+      @restaurant.reviews
+      review.rating
+      review.content
+      date posted %>
