@@ -18,9 +18,9 @@ require 'faker'
   )
 end
 
-5.times do
-  Review.create(
-    rating: Faker::Number.within(range: 0..5),
-    content: Faker::Restaurant.review
-  )
-end
+# 5.times do
+#   Review.create(
+#     rating: Faker::Number.within(range: 0..5),
+#     content: Faker::Restaurant.review
+#   )
+# end

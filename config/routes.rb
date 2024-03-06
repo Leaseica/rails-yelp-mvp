@@ -18,16 +18,16 @@ Rails.application.routes.draw do
 
   # * Add a new review (nested)
   get '/restaurants/:restaurant_id/reviews/new', to: 'reviews#new', as: :new_restaurant_review
-  post '/restaurants/:restaurant_id/reviews', to: 'reviews#create'
+  post '/restaurants/:restaurant_id/reviews', to: 'reviews#create', as: :restaurant_reviews
 
-  # # * Update my review (nested)
-  # get '/restaurants/restaurant_id/reviews/:id/edit', to: 'reviews#edit', as: :edit_restaurant_review
-  # patch '/restaurants/restaurant_id/reviews/:id', to: 'reviews#update'
-
-  # # * Delete my review (nested)
-  # delete '/restaurants/restaurant_id/reviews/:id', to: 'reviews#destroy'
 
   # * Visit the page of one restaurant 'restaurants#show'
   get '/restaurants/:id', to: 'restaurants#show', as: :restaurant
 
 end
+ # # * Update my review (nested)
+  # get '/restaurants/restaurant_id/reviews/:id/edit', to: 'reviews#edit', as: :edit_restaurant_review
+  # patch '/restaurants/restaurant_id/reviews/:id', to: 'reviews#update'
+
+  # # * Delete my review (nested)
+  # delete '/restaurants/restaurant_id/reviews/:id', to: 'reviews#destroy'

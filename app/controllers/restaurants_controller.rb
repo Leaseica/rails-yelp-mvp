@@ -15,14 +15,11 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(params_restaurant)
     if @restaurant.save
-      flash[:success] = "Object successfully created"
-      redirect_to restaurant_path(@restaurant)
+      redirect_to @restaurant, notice: "Restaurant was successfully created."
     else
-      flash[:error] = "Something went wrong"
-      render 'new'
+      render :new, status: :unprocessable_entity
     end
   end
-
 
 
   private
